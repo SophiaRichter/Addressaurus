@@ -1,0 +1,27 @@
+{
+	"manifest_version": 2,
+	"name": "Addressaurus: The Address Finder",
+	"version": "1.0",
+	"description": "Addressaurus is a delightful and practical Firefox add-on that enhances your browsing experience. With a simple right-click, transform any selected address on a webpage into an immersive map exploration. By selecting an address and choosing 'Search on Map' from the context menu, Addressaurus opens a new tab with the selected map service, instantly displaying the selected location. Experience the joy of seamless navigation and embark on exciting map adventures.",
+	
+	"options_ui": 
+	{
+		"page": "settings.html"
+	},
+
+    "background": 
+	{
+        "scripts": 
+		[
+            "background.js"
+        ],
+        "persistent": false
+    },
+
+    "permissions": 
+	[
+        "activeTab",
+        "contextMenus",
+		"storage"
+    ]
+}

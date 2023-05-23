@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Configuration Form</title>
+  <style>
+    label {
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    textarea {
+      width: 300px;
+      height: 150px;
+      resize: vertical;
+    }
+
+    button {
+      margin-top: 10px;
+    }
+
+    .form-container {
+      margin: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Settings</h1>
+  <div class="form-container">
+    <form id="configForm">
+      <label for="engine">Select engine:</label>
+      <textarea id="engine" name="engine"></textarea>
+      <button type="submit">Save</button>
+    </form>
+  </div>
+
+  <script src="settings.js"></script>
+</body>
+</html>
