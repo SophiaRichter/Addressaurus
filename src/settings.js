@@ -1,18 +1,21 @@
+
 function saveOptions(e) 
 {
-	let value = document.querySelector("#engine").value;
+	let value = document.querySelector("#mapselect").value;
 	
-	browser.extension.getBackgroundPage().saveData("engine", value);
-	e.preventDefault();
+	localStorage.setItem('engine', value);
+	console.log('save to engine ' + value);
 }
 
 function restoreOptions() 
 {
-	browser.extension.getBackgroundPage().getData("engine")
-	.then((res) => {
-		document.querySelector("#engine").value = res.engine || 'https://www.google.com/maps/search/?api=1&query='
-	});
+	let value = localStorage.getItem('engine');
+	if (value)
+	{
+		document.querySelector("#mapselect").value = value;
+		console.log('load from engine ' + value);
+	}
 }
 
 document.addEventListener('DOMContentLoaded', restoreOptions);
-document.querySelector("form").addEventListener("submit", saveOptions);
+document.querySelector("#btnSave").addEventListener("click", saveOptions);
